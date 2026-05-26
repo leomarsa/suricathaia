@@ -95,25 +95,41 @@ O **SuricathaIA** é uma plataforma de segurança perimetral baseada em intelig�
 
 ---
 
-## Instalação Rápida
+## Instalação via Claude Code (recomendado)
 
-> **Requisitos:** Ubuntu 22.04 / 24.04 · root · 2 vCPU · 4 GB RAM
+> **Requisitos:** Ubuntu 22.04 / 24.04 · root · 2 vCPU · 4 GB RAM · [API Key da Anthropic](https://console.anthropic.com/)
+
+### 1. Instalar Claude Code
+
+```bash
+apt update && apt install -y nodejs npm
+npm install -g @anthropic-ai/claude-code
+```
+
+### 2. Abrir o Claude Code
+
+```bash
+export ANTHROPIC_API_KEY=sua_chave_anthropic
+claude
+```
+
+### 3. Colar este prompt
+
+```
+Instale e configure o SuricathaIA completo neste servidor. IP: x.x.x.x
+```
+
+O Claude Code lê o `CLAUDE.md` automaticamente e executa tudo sozinho:
+clonagem do repositório, instalação de dependências, banco de dados, build do frontend e inicialização dos serviços.
+
+---
+
+## Instalação Manual
 
 ```bash
 git clone https://github.com/leomarsa/suricathaia.git /app
 sudo bash /app/install.sh
 ```
-
-O script instala e configura automaticamente todas as dependências, banco de dados, serviços e frontend.
-
-Após a instalação, siga as instruções exibidas no terminal ou use o **Claude Code** para finalizar a configuração:
-
-```bash
-npm install -g @anthropic-ai/claude-code
-cd /app && claude
-```
-
-> O `CLAUDE.md` deste repositório contém o procedimento completo de pós-instalação para guiar o Claude Code automaticamente.
 
 ---
 
