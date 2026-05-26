@@ -3,17 +3,22 @@ set -euo pipefail
 
 # ── SuricathaIA — Bootstrap ──────────────────────────────────────────────────
 # Uso em servidor limpo (Ubuntu 22.04 / 24.04):
-#   curl -fsSL https://raw.githubusercontent.com/leomarsa/suricathaia/master/bootstrap.sh | bash
+#
+#   GH_TOKEN=seu_token bash <(curl -fsSL -H "Authorization: token seu_token" \
+#     https://raw.githubusercontent.com/leomarsa/suricathaia/master/bootstrap.sh)
+#
+# Gere seu token em: https://github.com/settings/tokens (escopo: repo)
 
 RED='\033[0;31m'; GREEN='\033[0;32m'; YELLOW='\033[1;33m'; CYAN='\033[0;36m'; NC='\033[0m'
 ok()   { echo -e "${GREEN}[OK]${NC} $1"; }
 info() { echo -e "${CYAN}[→]${NC} $1"; }
 die()  { echo -e "${RED}[ERRO]${NC} $1"; exit 1; }
 
-[[ $EUID -ne 0 ]] && die "Execute como root: curl ... | sudo bash"
+[[ $EUID -ne 0 ]] && die "Execute como root"
+[[ -z "${GH_TOKEN:-}" ]] && die "GH_TOKEN não definido. Use: GH_TOKEN=seu_token bash <(curl ...)"
 
 SERVER_IP=$(hostname -I | awk '{print $1}')
-REPO="https://github.com/leomarsa/suricathaia.git"
+REPO="https://${GH_TOKEN}@github.com/leomarsa/suricathaia.git"
 APP_DIR=/app
 
 clear
