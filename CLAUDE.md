@@ -14,12 +14,19 @@ Sistema de segurança e controle de acesso com reconhecimento de placas (LPR), p
 
 ## Instalação em novo VPS (Ubuntu 22.04 / 24.04)
 
-Se este repositório foi clonado em um servidor novo, siga os passos abaixo **integralmente e sem pedir confirmação a cada etapa**.
+Siga os passos abaixo **integralmente e sem pedir confirmação a cada etapa**. Se o repositório ainda não foi clonado, comece pelo Passo 0.
 
 ### Pré-requisitos
 - Ubuntu 22.04 ou 24.04
 - Acesso root
 - Mínimo 2 vCPU / 4 GB RAM
+
+### Passo 0 — Clonar o repositório (se ainda não foi feito)
+
+```bash
+apt-get update -qq && apt-get install -y -qq git
+git clone https://github.com/leomarsa/suricathaia.git /app
+```
 
 ### Passo 1 — Rodar o script de instalação
 
