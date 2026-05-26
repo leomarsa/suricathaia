@@ -25,8 +25,6 @@
 
 O **SuricathaIA** é uma plataforma de segurança perimetral baseada em inteligência artificial, projetada para ambientes de missão crítica. Toda a computação é realizada na borda (*edge computing*), sem dependência de nuvem, garantindo latência mínima e operação contínua mesmo sem conectividade externa.
 
-> **Demo:** [cep.suricatha.com.br](http://cep.suricatha.com.br/login)
-
 ---
 
 ## Funcionalidades
