@@ -1,0 +1,19 @@
+[Unit]
+Description=SuricathaIA API — FastAPI REST
+After=network.target postgresql.service
+Requires=postgresql.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/app
+EnvironmentFile=/app/.env
+ExecStart=/opt/suricatha/.venv/bin/python api.py
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=suricatha-api
+
+[Install]
+WantedBy=multi-user.target

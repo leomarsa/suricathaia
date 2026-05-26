@@ -1,0 +1,26 @@
+# Secrets
+.env
+frontend/.env
+frontend/.env.production
+frontend/.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Runtime data
+snapshots/
+yolov8n.pt
+
+# Claude Code
+.claude/
+
+# OS
+.DS_Store
+*.log

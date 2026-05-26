@@ -1,0 +1,19 @@
+[Unit]
+Description=SuricathaIA Watchdog — LPR pipeline
+After=network.target postgresql.service
+Requires=postgresql.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/app
+EnvironmentFile=/app/.env
+ExecStart=/opt/suricatha/.venv/bin/python -m services.watchdog_service
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=suricatha-watchdog
+
+[Install]
+WantedBy=multi-user.target
