@@ -21,6 +21,10 @@ yolov8n.pt
 # Claude Code
 .claude/
 
+# Deploy local (contém token — nunca commitar)
+bootstrap_local.sh
+deploy_to.sh
+
 # OS
 .DS_Store
 *.log
